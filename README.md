@@ -1,28 +1,80 @@
 # dotfilesHammerspoon
 
-macOS をマウス・トラックパッドなしでキーボードのみで操作するための Hammerspoon 設定ファイル。
+macOS をマウス・トラックパッドなしでキーボードのみで操作するための設定ファイル。
 
-## インストール
+## 構成
+
+- **Hammerspoon** - ウィンドウ管理、マウスカーソル操作、アプリランチャー
+- **Karabiner-Elements** - Caps Lock → Hyper キー変換
+- **Vimium** - ブラウザの Vim 風キーボード操作
+
+## クイックインストール
 
 ```bash
-# Hammerspoon をインストール
-brew install --cask hammerspoon
+# リポジトリをクローン
+git clone https://github.com/clearclown/dotfilesHammerspoon.git ~/dotfilesHammerspoon
 
-# このリポジトリをクローン
-git clone https://github.com/ablaze/dotfilesHammerspoon.git ~/dotfilesHammerspoon
-
-# シンボリックリンクを作成
-ln -sf ~/dotfilesHammerspoon ~/.hammerspoon
-
-# Hammerspoon を起動
-open -a Hammerspoon
+# セットアップスクリプトを実行
+chmod +x ~/dotfilesHammerspoon/setup.sh
+~/dotfilesHammerspoon/setup.sh
 ```
 
-## キーバインド一覧
+## 手動インストール
 
-### 修飾キー
-- **Hyper** = `Ctrl + Alt + Cmd`
-- **HyperShift** = `Ctrl + Alt + Cmd + Shift`
+```bash
+# 1. Hammerspoon & Karabiner-Elements をインストール
+brew install --cask hammerspoon karabiner-elements
+
+# 2. シンボリックリンクを作成
+ln -sf ~/dotfilesHammerspoon ~/.hammerspoon
+mkdir -p ~/.config/karabiner
+ln -sf ~/dotfilesHammerspoon/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+
+# 3. アプリを起動
+open -a Hammerspoon
+open -a "Karabiner-Elements"
+```
+
+## Vimium インストール
+
+ブラウザ拡張機能をインストール：
+
+| ブラウザ | リンク |
+|----------|--------|
+| Arc / Chrome | [Chrome Web Store](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) |
+| Firefox | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/) |
+
+### Vimium 主要キーバインド
+
+| キー | 動作 |
+|------|------|
+| `j/k` | 下/上にスクロール |
+| `d/u` | 半ページ下/上 |
+| `gg/G` | ページ先頭/末尾 |
+| `f` | リンクヒント表示（クリック） |
+| `F` | リンクを新しいタブで開く |
+| `o` | URL/履歴/ブックマーク検索 |
+| `t` | 新しいタブ |
+| `J/K` | 前/次のタブ |
+| `x` | タブを閉じる |
+| `X` | 閉じたタブを復元 |
+| `r` | ページリロード |
+| `yy` | 現在のURLをコピー |
+| `gi` | 最初のテキスト入力にフォーカス |
+| `?` | ヘルプ表示 |
+
+---
+
+## Hyper キー
+
+**Caps Lock** を押すと **Hyper キー** (`Ctrl + Alt + Cmd`) として機能します。
+
+- **Caps Lock + 他のキー** → Hyper + そのキー
+- **Caps Lock 単押し** → Escape
+
+---
+
+## キーバインド一覧
 
 ### ウィンドウ管理
 
@@ -94,15 +146,34 @@ open -a Hammerspoon
 | `Hyper + U` | クリップボードのURLを開く |
 | `Hyper + /` | ヘルプ表示 |
 
+---
+
 ## 必要な権限
 
-Hammerspoon を初回起動時に以下の権限を許可してください：
+**システム設定 > プライバシーとセキュリティ** で以下を許可：
 
-1. **システム設定 > プライバシーとセキュリティ > アクセシビリティ**
-   - Hammerspoon を許可
+1. **アクセシビリティ**
+   - Hammerspoon
+   - Karabiner-Elements
+   - karabiner_grabber
 
-2. **システム設定 > プライバシーとセキュリティ > 入力監視**
-   - Hammerspoon を許可
+2. **入力監視**
+   - Hammerspoon
+   - Karabiner-Elements
+   - karabiner_grabber
+
+---
+
+## ファイル構成
+
+```
+~/dotfilesHammerspoon/
+├── init.lua              # Hammerspoon メイン設定
+├── karabiner/
+│   └── karabiner.json    # Karabiner-Elements 設定
+├── setup.sh              # セットアップスクリプト
+└── README.md
+```
 
 ## カスタマイズ
 
