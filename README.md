@@ -85,7 +85,9 @@ open -a "Karabiner-Elements"
 | `Hyper + K` | ウィンドウを上半分に |
 | `Hyper + J` | ウィンドウを下半分に |
 | `Hyper + M` | ウィンドウを最大化 |
-| `Hyper + C` | ウィンドウを中央に配置 |
+| `Hyper + Return` | フルスクリーン切替 |
+| `Hyper + Q` | ウィンドウを閉じる |
+| `HyperShift + C` | ウィンドウを中央に配置 |
 | `Hyper + N` | 次のモニターに移動 |
 | `Hyper + P` | 前のモニターに移動 |
 | `HyperShift + H` | 左上 1/4 |
@@ -116,24 +118,18 @@ open -a "Karabiner-Elements"
 
 | キー | アプリケーション |
 |------|------------------|
-| `Hyper + T` | Terminal |
-| `Hyper + B` | Arc (ブラウザ) |
-| `Hyper + F` | Finder |
-| `Hyper + S` | Slack |
-| `Hyper + V` | Visual Studio Code |
+| `Hyper + T` | Alacritty |
+| `Hyper + B` | Vivaldi Browser |
 | `Hyper + D` | Discord |
-| `Hyper + O` | Obsidian |
-| `Hyper + I` | iTerm |
-| `Hyper + Z` | Zoom |
-| `Hyper + A` | アプリ選択（ファジーファインダー） |
+| `Hyper + E` | Finder |
+| `HyperShift + T` | Finder パスで Alacritty を開く |
+| `HyperShift + A` | アプリ選択（ファジーファインダー） |
 
 ### ナビゲーション
 
 | キー | 動作 |
 |------|------|
 | `Hyper + W` | ウィンドウヒント（任意のウィンドウにジャンプ） |
-| `Hyper + Left/Right` | Spaces を切り替え |
-| `HyperShift + 矢印` | 指定方向のウィンドウにフォーカス |
 
 ### システム
 
@@ -142,9 +138,19 @@ open -a "Karabiner-Elements"
 | `Hyper + ESC` | 画面ロック |
 | `Hyper + R` | 設定リロード |
 | `HyperShift + R` | コンソール表示 |
-| `Hyper + V` | クリップボード履歴 |
 | `Hyper + U` | クリップボードのURLを開く |
 | `Hyper + /` | ヘルプ表示 |
+| `Hyper + ;` | UI ヒント（Vimium風） |
+
+### クリップボード
+
+| キー | 動作 |
+|------|------|
+| `Hyper + C` | コピー |
+| `Hyper + V` | ペースト |
+| `Hyper + X` | カット |
+| `Hyper + A` | 全選択 |
+| `HyperShift + V` | クリップボード履歴 |
 
 ---
 

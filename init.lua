@@ -536,7 +536,7 @@ clipboardWatcher:start()
 hs.hotkey.bind(hyperShift, "V", function()
     local chooser = hs.chooser.new(function(choice)
         if choice then
-            hs.pasteboard.setContents(choice.text)
+            hs.pasteboard.setContents(choice.fullText)
             hs.eventtap.keyStroke({"cmd"}, "v")
         end
     end)
@@ -750,11 +750,9 @@ h1 {
     <div class="section">
         <h2>🚀 Applications</h2>
         <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">T</span><span class="action">Alacritty</span></div>
-        <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">B</span><span class="action">Arc</span></div>
-        <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">E</span><span class="action">Finder</span></div>
-        <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">S</span><span class="action">Slack</span></div>
+        <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">B</span><span class="action">Vivaldi Browser</span></div>
         <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">D</span><span class="action">Discord</span></div>
-        <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">O</span><span class="action">Obsidian</span></div>
+        <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key">E</span><span class="action">Finder</span></div>
         <div class="divider"></div>
         <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key shift">Shift</span><span class="plus">+</span><span class="key">T</span><span class="action">Terminal at Finder Path</span></div>
         <div class="key-row"><span class="key hyper">Hyper</span><span class="plus">+</span><span class="key shift">Shift</span><span class="plus">+</span><span class="key">A</span><span class="action">App Chooser</span></div>
